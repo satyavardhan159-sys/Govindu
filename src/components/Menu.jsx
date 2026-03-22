@@ -68,61 +68,34 @@ const Menu = ({ selectedCategory = 'starters' }) => {
   };
 
   return (
-    <section id="menu" className="py-20 bg-gray-50">
+    <section id="menu" className="py-20 bg-gradient-to-br from-[#E8F5E9]/80 via-[#C8E6C9]/80 to-[#A5D6A7]/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-heading font-bold text-[#1B5E20] mb-4">
             Our Menu
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Discover our carefully crafted menu featuring fresh, seasonal ingredients
-            and culinary excellence.
+          <p className="text-lg text-[#3E2723] max-w-2xl mx-auto font-body">
+            Explore our diverse menu featuring authentic Andhra & Telangana cuisine, crafted with the freshest ingredients and traditional recipes.
           </p>
         </div>
-
-        {/* Category Tabs */}
-        <div className="flex justify-center mb-12">
-          <div className="bg-white rounded-lg shadow-lg p-2 border border-gray-100">
-            {Object.keys(menuCategories).map((category) => (
-              <button
-                key={category}
-                onClick={() => setActiveCategory(category)}
-                className={`px-8 py-3 rounded-md font-semibold text-sm transition-all duration-300 cursor-pointer ${
-                  activeCategory === category
-                    ? 'bg-orange-500 text-white shadow-md transform scale-105'
-                    : 'text-gray-700 hover:text-orange-500 hover:bg-orange-50'
-                }`}
-              >
-                {menuCategories[category].title}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* Menu Items */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {menuCategories[activeCategory].items.map((item, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100"
+        <div className="flex flex-wrap justify-center gap-4 mb-12">
+          {Object.keys(menuCategories).map((category) => (
+            <button
+              key={category}
+              onClick={() => setActiveCategory(category)}
+              className={`px-6 py-2 rounded-full font-bold text-base transition-all duration-300 shadow-md border-2 cursor-pointer ${activeCategory === category ? 'bg-[#43A047] text-white border-[#43A047]' : 'bg-white text-[#1B5E20] border-[#43A047] hover:bg-[#43A047] hover:text-white'}`}
             >
-              <div className="relative h-56 overflow-hidden">
-                <img
-                  src={item.image}
-                  alt={item.name}
-                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
-                />
-
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-3 hover:text-orange-500 transition-colors duration-200">
-                  {item.name}
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  {item.description}
-                </p>
-              </div>
+              {menuCategories[category].title}
+            </button>
+          ))}
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {menuCategories[activeCategory].items.map((item, idx) => (
+            <div key={idx} className="bg-white rounded-2xl shadow-xl p-6 flex flex-col items-center text-center border border-[#A5D6A7]/40 hover:shadow-2xl transition-all duration-300 cursor-pointer">
+              <img src={item.image} alt={item.name} className="w-full h-48 object-cover rounded-lg mb-4" />
+              <h3 className="text-xl font-bold text-[#1B5E20] mb-2 font-heading">{item.name}</h3>
+              <p className="text-[#3E2723] mb-2 font-body">{item.description}</p>
+              <span className="text-lg font-bold text-[#43A047] font-heading">{item.price}</span>
             </div>
           ))}
         </div>

@@ -13,20 +13,7 @@ const Hero = ({ onMenuSelect }) => {
       cta: 'Corporate Catering Menu',
       ctaCategory: 'mains'
     },
-    {
-      image: 'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
-      title: 'Sacred Culinary Traditions',
-      subtitle: 'Our Andhra & Telangana cuisine carries the divine blessings of Lord Venkateswara.',
-      cta: 'Andhra & Telangana Marriage Catering Menu',
-      ctaCategory: 'rice'
-    },
-    {
-      image: 'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80',
-      title: 'Divine Feast for Every Occasion',
-      subtitle: 'From weddings to festivals, we bring Lord Venkateswara\'s blessings to your celebrations.',
-      cta: undefined,
-      ctaCategory: undefined
-    }
+    // ...add other slides here as needed...
   ];
 
   const handleSlideMenu = (category) => {
@@ -58,30 +45,32 @@ const Hero = ({ onMenuSelect }) => {
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
-            <div className="relative h-full">
-              <img
-                src={slide.image}
-                alt={slide.title}
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-opacity-40"></div>
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center text-white px-4 max-w-4xl">
-                  <h1 className="text-2xl sm:text-4xl md:text-6xl font-bold mb-4 animate-fade-in">
-                    {slide.title}
-                  </h1>
-                  <p className="text-sm sm:text-lg md:text-xl mb-8 animate-fade-in-delay">
-                    {slide.subtitle}
-                  </p>
-                  {slide.cta && (
-                    <button
-                      onClick={() => handleSlideMenu(slide.ctaCategory)}
-                      className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
-                    >
-                      {slide.cta}
-                    </button>
-                  )}
-                </div>
+            <div
+              className="relative h-screen w-full flex items-center justify-center"
+              style={{
+                backgroundImage: `url(${slide.image})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+              }}
+            >
+              {/* Overlay with green gradient and darken */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[#1B5E20]/80 via-[#388E3C]/70 to-black/70 z-0" />
+              <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 h-full">
+                <h1 className="text-3xl md:text-5xl font-bold mb-4 text-white drop-shadow-lg" style={{ fontFamily: 'Playfair Display, serif', fontWeight: 700, letterSpacing: '0.02em' }}>
+                  {slide.title}
+                </h1>
+                <p className="text-lg md:text-2xl text-white mb-8 font-medium" style={{ fontFamily: 'Playfair Display, serif', fontWeight: 400 }}>
+                  {slide.subtitle}
+                </p>
+                {slide.cta && (
+                  <button
+                    onClick={() => handleSlideMenu(slide.ctaCategory)}
+                    className="bg-[#43A047] hover:bg-[#2E7D32] text-white px-8 py-3 rounded-full font-bold text-base shadow-xl transition-all duration-300 animate-fade-in border-2 border-[#FF6B00] hover:border-[#e65c00]"
+                    style={{ fontFamily: 'Playfair Display, serif', letterSpacing: '0.01em' }}
+                  >
+                    {slide.cta}
+                  </button>
+                )}
               </div>
             </div>
           </SwiperSlide>

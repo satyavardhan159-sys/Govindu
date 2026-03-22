@@ -37,13 +37,13 @@ const Testimonials = () => {
   ];
 
   return (
-    <section id="testimonials" className="py-20 bg-gray-50">
+    <section id="testimonials" className="py-20 bg-gradient-to-br from-[#E8F5E9]/80 via-[#C8E6C9]/80 to-[#A5D6A7]/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-heading font-bold text-[#1B5E20] mb-4">
             What Our Clients Say
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-[#3E2723] max-w-2xl mx-auto font-body">
             Don't just take our word for it. Here's what our satisfied clients
             have to say about their experiences with GoVindu Catering.
           </p>
@@ -73,11 +73,11 @@ const Testimonials = () => {
         >
           {testimonials.map((testimonial, index) => (
             <SwiperSlide key={index}>
-              <div className="bg-gradient-to-br from-white via-orange-50 to-orange-100 rounded-2xl shadow-2xl p-8 h-[450px] border-2 border-gray-100 hover:shadow-3xl hover:border-orange-200 transition-all duration-300 transform hover:-translate-y-1 hover:from-orange-50 hover:via-orange-100 hover:to-orange-200">
+              <div className="bg-gradient-to-br from-white via-secondary/10 to-secondary/20 rounded-btn shadow-2xl p-8 h-[450px] border-2 border-secondary/20 hover:shadow-3xl hover:border-secondary transition-all duration-300 transform hover:-translate-y-1">
                 <div className="flex flex-col h-full">
                   {/* Image and Rating Row */}
                   <div className="flex items-center mb-6">
-                    <div className="w-20 h-20 rounded-full overflow-hidden mr-4 border-4 border-orange-100">
+                    <div className="w-20 h-20 rounded-full overflow-hidden mr-4 border-4 border-secondary/20">
                       <img
                         src={testimonial.image}
                         alt={testimonial.name}
@@ -93,13 +93,13 @@ const Testimonials = () => {
 
                   {/* Content */}
                   <div className="flex-1">
-                    <h4 className="font-bold text-gray-900 text-xl mb-2">
+                    <h4 className="font-heading font-bold text-dark text-xl mb-2">
                       {testimonial.name}
                     </h4>
-                    <p className="text-sm text-orange-600 font-semibold mb-4 bg-orange-50 px-3 py-1 rounded-full inline-block">
+                    <p className="text-sm text-secondary font-semibold mb-4 bg-secondary/10 px-3 py-1 rounded-full inline-block font-body">
                       {testimonial.role}
                     </p>
-                    <p className="text-gray-700 leading-relaxed text-sm">
+                    <p className="text-body text-gray-700 group-hover:text-dark leading-relaxed text-sm">
                       "{testimonial.content}"
                     </p>
                   </div>

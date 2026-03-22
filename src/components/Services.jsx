@@ -36,13 +36,13 @@ const Services = () => {
   };
 
   return (
-    <section id="services" className="py-20 bg-gray-50">
+    <section id="services" className="py-20 bg-gradient-to-br from-[#E8F5E9]/80 via-[#C8E6C9]/80 to-[#A5D6A7]/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-heading font-bold text-[#1B5E20] mb-4">
             Our Catering Services
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-[#3E2723] max-w-2xl mx-auto font-body">
             We specialize in creating memorable dining experiences for all types of events,
             from intimate gatherings to large celebrations.
           </p>
@@ -53,15 +53,15 @@ const Services = () => {
             <div
               key={index}
               onClick={() => handleServiceClick(service.slug)}
-              className="bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-all duration-300 cursor-pointer transform hover:scale-105 hover:bg-orange-50"
+              className="bg-white rounded-btn shadow-lg p-6 text-center hover:shadow-2xl transition-all duration-300 cursor-pointer transform hover:scale-105 border border-transparent hover:border-secondary group"
             >
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-orange-100 rounded-full mb-4 transition-colors duration-300 hover:bg-orange-200">
-                <service.icon className="w-8 h-8 text-orange-500" />
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-secondary/20 rounded-full mb-4 transition-colors duration-300 group-hover:bg-secondary">
+                <service.icon className="w-8 h-8 text-primary group-hover:text-white" style={{ filter: 'drop-shadow(0 0 2px #1B5E20)' }} />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3 hover:text-orange-600 transition-colors duration-300">
+              <h3 className="text-xl font-heading font-semibold mb-3 group-hover:text-secondary transition-colors duration-300" style={{ color: '#1B5E20' }}>
                 {service.title}
               </h3>
-              <p className="text-gray-600">
+              <p className="text-body text-gray-700 group-hover:text-dark">
                 {service.description}
               </p>
             </div>

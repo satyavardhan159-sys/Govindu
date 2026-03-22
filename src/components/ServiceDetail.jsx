@@ -193,7 +193,7 @@ const ServiceDetail = () => {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ color: '#1B5E20' }}>
               {service.title}
             </h1>
             <Link to="/" className="text-orange-500 hover:text-orange-600 font-semibold">
@@ -213,7 +213,7 @@ const ServiceDetail = () => {
 
             {/* Description Section */}
             <div className="flex flex-col justify-center">
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">
+              <h2 className="text-3xl font-bold mb-6" style={{ color: '#1B5E20' }}>
                 About Our {service.title}
               </h2>
               <div className="text-gray-700 leading-relaxed whitespace-pre-line">
@@ -224,7 +224,7 @@ const ServiceDetail = () => {
 
           {/* FAQ Section */}
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">
+            <h2 className="text-3xl font-bold text-center mb-12" style={{ color: '#1B5E20' }}>
               Frequently Asked Questions
             </h2>
             <div className="space-y-4">

@@ -48,13 +48,13 @@ const Pricing = () => {
   ];
 
   return (
-    <section id="pricing" className="py-20 bg-white">
+    <section id="pricing" className="py-20 bg-gradient-to-br from-[#E8F5E9]/80 via-[#C8E6C9]/80 to-[#A5D6A7]/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-heading font-bold text-[#1B5E20] mb-4">
             Pricing Packages
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-[#3E2723] max-w-2xl mx-auto font-body">
             Choose the perfect package for your event. All packages include professional
             service and exceptional quality.
           </p>
@@ -64,37 +64,32 @@ const Pricing = () => {
           {packages.map((pkg, index) => (
             <div
               key={index}
-              className={`relative bg-white rounded-lg shadow-lg overflow-hidden ${
-                pkg.popular ? 'ring-2 ring-orange-500 transform scale-105' : ''
-              }`}
+              className={`relative bg-white rounded-btn shadow-lg overflow-hidden border border-secondary/20 transition-transform duration-300 cursor-pointer ${pkg.popular ? 'ring-2 ring-primary transform scale-105 z-10' : ''}`}
             >
               {pkg.popular && (
-                <div className="absolute top-0 right-0 bg-orange-500 text-white px-4 py-1 text-sm font-semibold">
+                <div className="absolute top-0 right-0 bg-primary text-white px-4 py-1 text-sm font-semibold rounded-bl-btn">
                   Most Popular
                 </div>
               )}
 
               <div className="p-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                <h3 className="text-2xl font-heading font-bold text-dark mb-4">
                   {pkg.name}
                 </h3>
-
-
-
+                {/* Price removed as per request */}
                 <ul className="space-y-3 mb-8">
                   {pkg.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-center">
-                      <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
-                      <span className="text-gray-700">{feature}</span>
+                      <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
+                      <span className="text-dark font-body">{feature}</span>
                     </li>
                   ))}
                 </ul>
-
-                <button className={`w-full py-3 px-6 rounded-lg font-semibold transition-colors duration-200 ${
-                  pkg.popular
-                    ? 'bg-orange-500 hover:bg-orange-600 text-white'
-                    : 'bg-gray-100 hover:bg-gray-200 text-gray-900'
-                }`}>
+                <button className={`w-full py-3 px-6 rounded-btn font-heading font-semibold transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-bg
+                  ${pkg.popular
+                    ? 'bg-primary hover:bg-secondary text-white shadow-md'
+                    : 'bg-secondary/10 hover:bg-secondary/20 text-dark'}
+                `}>
                   Choose Package
                 </button>
               </div>
@@ -103,12 +98,13 @@ const Pricing = () => {
         </div>
 
         <div className="text-center mt-12">
-          <p className="text-gray-600 mb-4">
-            Need a custom package? Contact us for personalized pricing.
+          <p className="text-dark mb-4 font-body">
+            Need a custom package? <a href="#contact" className="text-primary underline hover:text-secondary font-bold">Contact us</a> for personalized pricing.
           </p>
           <a
             href="#contact"
-            className="inline-block bg-gray-800 hover:bg-gray-900 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-200"
+            className="inline-block text-white px-8 py-3 rounded-btn font-heading font-semibold transition-colors duration-200 shadow-md border-2 border-[#1B5E20]"
+            style={{ backgroundColor: '#1B5E20' }}
           >
             Get Custom Quote
           </a>
